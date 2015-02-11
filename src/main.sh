@@ -503,8 +503,13 @@ EOF
 
 		if ! mkdir -p "${tmp_dir}"; then
 			log_error 'Failed to create temporary directory'
+			log_error "  BASHMENOT_INTERNAL_TMP=${BASHMENOT_INTERNAL_TMP}"
+			log_error "  tmp_dir=${tmp_dir}"
 			return 1
 		fi
+		log_error 'Succeeded to create temporary directory'
+		log_error "  BASHMENOT_INTERNAL_TMP=${BASHMENOT_INTERNAL_TMP}"
+		log_error "  tmp_dir=${tmp_dir}"
 
 		export BASHMENOT_INTERNAL_TMP="${tmp_dir}"
 	fi
